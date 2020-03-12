@@ -1,3 +1,17 @@
+<?php
+
+/*----------------------------------------------------------------------------------------
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License. See LICENSE in the project root for license information.
+ *---------------------------------------------------------------------------------------*/
+
+function sayHello($name) {
+	echo "Hello $name!";
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,6 +21,9 @@
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
     </head>
     <body>
+        <?php 
+		sayHello('remote world');
+		?>
         <section class="hero is-medium is-info is-bold">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -33,7 +50,7 @@
                                     <?php
                                     $link = mysqli_connect("mysql", "root", "tiger", null);
 
-/* check connection */
+                                    /* check connection */
                                     if (mysqli_connect_errno()) {
                                         printf("MySQL connecttion failed: %s", mysqli_connect_error());
                                     } else {
